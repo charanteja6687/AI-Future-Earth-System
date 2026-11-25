@@ -1,0 +1,161 @@
+/* Home Page */
+.home {
+  background: var(--bg-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Hero */
+.hero {
+  min-height:     90vh;
+  display:        flex;
+  align-items:    center;
+  padding:        4rem 3rem;
+  position:       relative;
+  overflow:       hidden;
+}
+.hero-background-video{
+    position:absolute;
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    z-index:0;
+
+    opacity:0.45;
+}
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(5,10,25,.55);
+    z-index:1;
+}
+.hero-bg { position:absolute; inset:0; pointer-events:none; z-index:2; }
+.hero-orb {
+  position:      absolute;
+  border-radius: 50%;
+  filter:        blur(80px);
+  opacity:       0.15;
+}
+.orb1 { width:500px; height:500px; background:var(--accent-green); top:-100px; right:50px; }
+.orb2 { width:400px; height:400px; background:var(--accent-blue);  bottom:-50px; left:50px; }
+.hero-grid {
+  position:   absolute; inset:0;
+  background: repeating-linear-gradient(
+    0deg, transparent, transparent 49px, rgba(0,255,136,0.03) 50px),
+    repeating-linear-gradient(
+    90deg, transparent, transparent 49px, rgba(0,255,136,0.03) 50px);
+}
+
+.hero-content { position:relative; z-index:3; max-width:700px; animation:fadeInUp 0.8s ease; }
+.hero-badge {
+  display:       inline-flex;
+  align-items:   center;
+  gap:           0.4rem;
+  background:    rgba(0,255,136,0.1);
+  border:        1px solid rgba(0,255,136,0.3);
+  border-radius: 100px;
+  padding:       0.3rem 0.9rem;
+  font-size:     0.75rem;
+  color:         var(--accent-green);
+  margin-bottom: 1rem;
+  letter-spacing:0.05em;
+}
+.hero-title {
+  font-family: var(--font-display);
+  font-size:   3rem;
+  font-weight: 900;
+  color:       var(--text-primary);
+  line-height: 1.1;
+  margin-bottom:0.5rem;
+  text-shadow: 0 0 40px rgba(0,255,136,0.2);
+}
+.hero-tagline {
+  font-family:   var(--font-display);
+  font-size:     2rem;
+  font-weight:   700;
+  margin-bottom: 1rem;
+  display:       flex;
+  gap:           0.5rem;
+  flex-wrap:     wrap;
+}
+.hero-desc { font-size:1rem; color:var(--text-secondary); line-height:1.7; margin-bottom:2rem; max-width:500px; }
+.hero-actions { display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:2.5rem; }
+.hero-cta { font-size:1rem; padding:0.8rem 2rem; }
+
+.hero-stats { display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap; }
+.hero-stat-val { font-family:var(--font-display); font-size:1.5rem; font-weight:700; color:var(--accent-green); }
+.hero-stat-lab { font-size:0.7rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.1em; }
+.hero-stat-div { width:1px; height:40px; background:var(--border); }
+
+/* Sections */
+.home-section { padding:4rem 3rem; }
+.home-section-label { font-size:0.7rem; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--accent-green); margin-bottom:0.5rem; }
+.home-section-title { font-size:2rem; font-weight:800; margin-bottom:2.5rem; }
+
+.features-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem; }
+.feature-card {
+  background:    var(--bg-glass);
+  border:        1px solid var(--border);
+  border-radius: var(--radius);
+  padding:       1.5rem;
+  transition:    var(--transition);
+}
+.feature-card:hover { border-color:var(--accent-green); transform:translateY(-3px); box-shadow:var(--shadow-glow); }
+.feature-icon  { font-size:2rem; margin-bottom:0.75rem; }
+.feature-title { font-size:1rem; font-weight:700; margin-bottom:0.5rem; }
+.feature-desc  { font-size:0.82rem; color:var(--text-secondary); line-height:1.6; }
+
+.steps-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem; }
+.step-card  { position:relative; }
+.step-num   { font-family:var(--font-display); font-size:3rem; font-weight:900; color:rgba(0,255,136,0.15); line-height:1; margin-bottom:0.5rem; }
+.step-title { font-size:1rem; font-weight:700; margin-bottom:0.4rem; color:var(--accent-green); }
+.step-desc  { font-size:0.82rem; color:var(--text-secondary); line-height:1.6; }
+
+.risk-section { background:rgba(0,255,136,0.02); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+.risk-formula { background:var(--bg-secondary); border:1px solid var(--border); border-radius:var(--radius); padding:1.25rem; margin-bottom:1.5rem; }
+.risk-formula-text { font-family:var(--font-display); font-size:0.85rem; color:var(--accent-green); text-align:center; letter-spacing:0.02em; }
+.risk-levels { display:flex; gap:1rem; flex-wrap:wrap; }
+.risk-level-card { flex:1; min-width:160px; display:flex; align-items:center; gap:0.7rem; border-radius:var(--radius); padding:1rem 1.25rem; font-size:0.9rem; }
+.risk-level-card.low { background:rgba(0,255,136,0.08);  border:1px solid rgba(0,255,136,0.3);  color:var(--risk-low); }
+.risk-level-card.mid { background:rgba(251,191,36,0.08); border:1px solid rgba(251,191,36,0.3); color:var(--risk-medium); }
+.risk-level-card.hi  { background:rgba(239,68,68,0.08);  border:1px solid rgba(239,68,68,0.3);  color:var(--risk-high); }
+.risk-level-card b   { font-weight:700; font-size:1rem; }
+
+.home-cta {
+  text-align:center;
+  padding:    5rem 3rem;
+  background: radial-gradient(ellipse at center, rgba(0,255,136,0.06) 0%, transparent 70%);
+}
+.home-cta h2  { font-size:2rem; font-weight:800; margin-bottom:0.75rem; }
+.home-cta p   { color:var(--text-secondary); margin-bottom:2rem; font-size:1rem; }
+
+.home-footer {
+  display:         flex;
+  justify-content: space-between;
+  padding:         1.5rem 3rem;
+  border-top:      1px solid var(--border);
+  font-size:       0.82rem;
+  color:           var(--text-secondary);
+}
+
+@media (max-width:1024px) {
+  .features-grid, .steps-grid { grid-template-columns:repeat(2,1fr); }
+  .hero { flex-direction:column; text-align:center; padding:3rem 1.5rem; }
+  .hero-earth{
+    width:300px;
+    height:300px;
+}
+}
+@media (max-width:768px) {
+  .features-grid, .steps-grid { grid-template-columns:1fr; }
+  .hero-title { font-size:2rem; }
+  .home-nav { padding:1rem 1.5rem; }
+  .home-section { padding:2.5rem 1.5rem; }
+  .home-footer  { flex-direction:column; gap:0.5rem; }
+}
