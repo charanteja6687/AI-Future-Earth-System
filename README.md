@@ -202,13 +202,3 @@ Run `python ai/dataset_generator.py` from the project root.
 
 **CORS errors:**  
 The backend allows all origins by default. For production, restrict `cors()` in `server.js`.
-
----
-
-## 📜 License
-
-MIT © AI Future Earth Project
-=======
-# AI-Future-Earth-System
-AI-powered environmental prediction and future Earth simulation system for 10 countries and 28 Indian states (2025–2100).
->>>>>>> ab25566d48f18208dd88e6d7a40f7cf9a8c27897
